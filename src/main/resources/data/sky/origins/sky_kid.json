@@ -5,6 +5,7 @@
 	"powers": [
 		"sky:child_height",
 		"sky:health",
+		"sky:light",
 		"sky:lightweight",
 		"sky:cape"
 	],

@@ -1,0 +1,13 @@
+{
+	"name": "§eBorn of the Light",
+	"description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles being the most efficient way to recharge. Light serves as a shield from damage, using up light whenever it has to protect you. The amount used varies from the amount of damage. If your light runs out, you will start to be able to take damage.",
+    "type": "origins:resource",
+    "min": 0,
+    "max": 70,
+	"start_value": 70,
+    "hud_render": {
+       "sprite_location": "origins:textures/gui/resource_bar.png",
+		"should_render": true,
+		"bar_index": 7
+    }
+}
