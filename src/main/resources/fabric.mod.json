@@ -1,29 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "sky",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Sky Origin",
+  "description": "This mod adds the opportunity to be a Child of The Light from Sky: COTL. Alongside this, it adds some extra content from Sky.",
   "authors": [
-    "Me!"
+    "Arvem"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/sky"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/sky/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "arvem.sky.Sky"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "sky.mixins.json"
   ],
 
   "depends": {

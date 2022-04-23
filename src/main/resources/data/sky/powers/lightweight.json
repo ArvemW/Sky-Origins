@@ -1,0 +1,17 @@
+{
+    "name": "Free Spirit",
+    "description": "Your flight is hindered by chest and leg pieces, so you've instead done away with them.",
+    "loading_priority": 7,
+    "type": "origins:restrict_armor",
+    "chest": {
+        "type": "origins:armor_value",
+        "comparison": ">",
+        "compare_to": 0
+    },
+    "legs": {
+        "type": "origins:armor_value",
+        "comparison": ">",
+        "compare_to": 0
+    },
+    "tick_rate": 1
+}

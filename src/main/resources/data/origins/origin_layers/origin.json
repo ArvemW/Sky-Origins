@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "order": 0,
+    "enabled": true,
+    "origins": [
+      "sky:sky_kid"
+    ],
+    "hidden": false
+  }

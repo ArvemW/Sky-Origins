@@ -1,0 +1,11 @@
+{
+    "name": "Childish Aspects",
+    "description": "You are a child. Therefore, you are delicate and petite in comparison.",
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "Fragile health reduction",
+      "attribute": "minecraft:generic.max_health",
+      "value": -12.0,
+      "operation": "addition"
+    }
+  }
