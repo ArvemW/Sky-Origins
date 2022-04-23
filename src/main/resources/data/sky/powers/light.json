@@ -18,39 +18,40 @@
        "entity_action":{
         "type":"origins:if_else_list",
         "actions":[
-            {
-                "condition": {
-                    "type":"origins:and",
-                    "conditions":[
-                       {
-                          "type":"origins:fluid_height",
-                          "fluid":"minecraft:water",
-                          "comparison":"==",
-                          "compare_to":0
-                       },
-                       {
-                          "type": "origins:block_in_radius",
-                          "block_condition": {
-                              "type": "origins:in_tag",
-                              "tag": "sky:prime_sources"
-                          },
-                          "radius": 2,
-                          "comparison": "==",
-                          "compare_to": 1
-                       },
-                       {
-                          "type":"origins:in_rain",
-                          "inverted":true
-                       }
-                    ]
-                },
-                "action": {
-                    "type":"origins:change_resource",
-                    "resource":"sky:light_resource",
-                    "change":4
-                }
+         {
+               "condition": {
+                  "type":"origins:and",
+                  "conditions":[
+                     {
+                        "type":"origins:fluid_height",
+                        "fluid":"minecraft:water",
+                        "comparison":"==",
+                        "compare_to":0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:in_tag",
+                           "tag": "sky:prime_sources"
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 3
+                     },
+                     {
+                        "type":"origins:in_rain",
+                        "inverted":true
+                     }
+                  ]
+               },
+               "action": {
+                  "type":"origins:change_resource",
+                  "resource":"sky:light_resource",
+                  "change":12
+               }
             },
             {
+               
                 "condition": {
                     "type":"origins:and",
                     "conditions":[
@@ -84,38 +85,6 @@
             },
             {
                "condition": {
-                   "type":"origins:and",
-                   "conditions":[
-                      {
-                         "type":"origins:fluid_height",
-                         "fluid":"minecraft:water",
-                         "comparison":"==",
-                         "compare_to":0
-                      },
-                      {
-                         "type": "origins:block_in_radius",
-                         "block_condition": {
-                             "type": "origins:in_tag",
-                             "tag": "sky:prime_sources"
-                         },
-                         "radius": 2,
-                         "comparison": ">=",
-                         "compare_to": 3
-                      },
-                      {
-                         "type":"origins:in_rain",
-                         "inverted":true
-                      }
-                   ]
-               },
-               "action": {
-                   "type":"origins:change_resource",
-                   "resource":"sky:light_resource",
-                   "change":12
-               }
-            },
-            {
-               "condition": {
                   "type":"origins:and",
                   "conditions":[
                      {
@@ -131,8 +100,8 @@
                            "tag": "sky:average_sources"
                         },
                         "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
+                        "comparison": ">=",
+                        "compare_to": 3
                      },
                      {
                         "type":"origins:in_rain",
@@ -143,8 +112,40 @@
                "action": {
                   "type":"origins:change_resource",
                   "resource":"sky:light_resource",
-                  "change":2
+                  "change":6
                }
+            },
+            {
+                "condition": {
+                    "type":"origins:and",
+                    "conditions":[
+                       {
+                          "type":"origins:fluid_height",
+                          "fluid":"minecraft:water",
+                          "comparison":"==",
+                          "compare_to":0
+                       },
+                       {
+                          "type": "origins:block_in_radius",
+                          "block_condition": {
+                              "type": "origins:in_tag",
+                              "tag": "sky:prime_sources"
+                          },
+                          "radius": 2,
+                          "comparison": "==",
+                          "compare_to": 1
+                       },
+                       {
+                          "type":"origins:in_rain",
+                          "inverted":true
+                       }
+                    ]
+                },
+                "action": {
+                    "type":"origins:change_resource",
+                    "resource":"sky:light_resource",
+                    "change":4
+                }
             },
             {
                "condition": {
@@ -176,38 +177,6 @@
                   "type":"origins:change_resource",
                   "resource":"sky:light_resource",
                   "change":4
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 3
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":8
                }
             },
             {
@@ -259,8 +228,40 @@
                            "tag": "sky:weak_sources"
                         },
                         "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 3
+                     },
+                     {
+                        "type":"origins:in_rain",
+                        "inverted":true
+                     }
+                  ]
+               },
+               "action": {
+                  "type":"origins:change_resource",
+                  "resource":"sky:light_resource",
+                  "change":3
+               }
+            },
+            {
+               "condition": {
+                  "type":"origins:and",
+                  "conditions":[
+                     {
+                        "type":"origins:fluid_height",
+                        "fluid":"minecraft:water",
+                        "comparison":"==",
+                        "compare_to":0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:in_tag",
+                           "tag": "sky:average_sources"
+                        },
+                        "radius": 2,
                         "comparison": "==",
-                        "compare_to": 2
+                        "compare_to": 1
                      },
                      {
                         "type":"origins:in_rain",
@@ -291,8 +292,8 @@
                            "tag": "sky:weak_sources"
                         },
                         "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 3
+                        "comparison": "==",
+                        "compare_to": 2
                      },
                      {
                         "type":"origins:in_rain",
@@ -303,7 +304,7 @@
                "action": {
                   "type":"origins:change_resource",
                   "resource":"sky:light_resource",
-                  "change":3
+                  "change":2
                }
             }
         
