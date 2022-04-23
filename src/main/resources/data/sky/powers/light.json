@@ -1,13 +1,121 @@
 {
 	"name": "§eBorn of the Light",
 	"description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles being the most efficient way to recharge. Light serves as a shield from damage, using up light whenever it has to protect you. The amount used varies from the amount of damage. If your light runs out, you will start to be able to take damage.",
-    "type": "origins:resource",
-    "min": 0,
-    "max": 70,
-	"start_value": 70,
-    "hud_render": {
-       "sprite_location": "origins:textures/gui/resource_bar.png",
-		"should_render": true,
-		"bar_index": 7
+    "type":"origins:multiple",
+    "resource":{
+       "type":"origins:resource",
+       "min":0,
+       "max":70,
+       "hud_render":{
+          "should_render":true,
+          "sprite_location":"origins:textures/gui/resource_bar.png",
+          "bar_index":7
+       }
+    },
+    "light_gain":{
+       "type":"origins:action_over_time",
+       "interval":20,
+       "entity_action":{
+        "type":"origins:if_else_list",
+        "actions":[
+            {
+                "condition": {
+                    "type":"origins:and",
+                    "conditions":[
+                       {
+                          "type":"origins:fluid_height",
+                          "fluid":"minecraft:water",
+                          "comparison":"==",
+                          "compare_to":0
+                       },
+                       {
+                          "type": "origins:block_in_radius",
+                          "block_condition": {
+                              "type": "origins:in_tag",
+                              "tag": "sky:prime_sources"
+                          },
+                          "radius": 2,
+                          "comparison": "==",
+                          "compare_to": 1
+                       },
+                       {
+                          "type":"origins:in_rain",
+                          "inverted":true
+                       }
+                    ]
+                },
+                "action": {
+                    "type":"origins:change_resource",
+                    "resource":"sky:light_resource",
+                    "change":2
+                }
+            },
+            {
+                "condition": {
+                    "type":"origins:and",
+                    "conditions":[
+                       {
+                          "type":"origins:fluid_height",
+                          "fluid":"minecraft:water",
+                          "comparison":"==",
+                          "compare_to":0
+                       },
+                       {
+                          "type": "origins:block_in_radius",
+                          "block_condition": {
+                              "type": "origins:in_tag",
+                              "tag": "sky:prime_sources"
+                          },
+                          "radius": 2,
+                          "comparison": "==",
+                          "compare_to": 2
+                       },
+                       {
+                          "type":"origins:in_rain",
+                          "inverted":true
+                       }
+                    ]
+                },
+                "action": {
+                    "type":"origins:change_resource",
+                    "resource":"sky:light_resource",
+                    "change":4
+                }
+            },
+            {
+               "condition": {
+                   "type":"origins:and",
+                   "conditions":[
+                      {
+                         "type":"origins:fluid_height",
+                         "fluid":"minecraft:water",
+                         "comparison":"==",
+                         "compare_to":0
+                      },
+                      {
+                         "type": "origins:block_in_radius",
+                         "block_condition": {
+                             "type": "origins:in_tag",
+                             "tag": "sky:prime_sources"
+                         },
+                         "radius": 2,
+                         "comparison": ">=",
+                         "compare_to": 3
+                      },
+                      {
+                         "type":"origins:in_rain",
+                         "inverted":true
+                      }
+                   ]
+               },
+               "action": {
+                   "type":"origins:change_resource",
+                   "resource":"sky:light_resource",
+                   "change":6
+               }
+           }
+                ]
+       }
     }
 }
+ 

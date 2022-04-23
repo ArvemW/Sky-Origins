@@ -1,0 +1,12 @@
+
+{
+    "replace": false,
+    "values": [
+    "#minecraft:candles",
+    "minecraft:campfire",
+    "minecraft:torch",
+    "minecraft:wall_torch",
+    "minecraft:lantern",
+    "minecraft:shroomlight"
+    ]
+  }
