@@ -1,0 +1,36 @@
+{
+    "flap": {
+        "category": "player",
+        "subtitle": "subtitles.sky.flap",
+        "sounds": [
+            {
+            "name": "sky:flap01",
+            "stream": false
+        },
+        {
+            "name": "sky:flap02",
+            "stream": false
+        },
+        {
+            "name": "sky:flap03",
+            "stream": false
+        },
+        {
+            "name": "sky:flap04",
+            "stream": false
+        },
+        {
+            "name": "sky:flap05",
+            "stream": false
+        },
+        {
+            "name": "sky:flap06",
+            "stream": false
+        },
+        {
+            "name": "sky:flap07",
+            "stream": false
+        }
+      ]
+    }
+  }
