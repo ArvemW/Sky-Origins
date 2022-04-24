@@ -1,5 +1,5 @@
 {
-    "name": "Free Spirit",
+    "name": "§nFree Spirit",
     "description": "Your flight is hindered by chest and leg pieces, so you've instead done away with them.",
     "loading_priority": 7,
     "type": "origins:restrict_armor",

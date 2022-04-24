@@ -1,6 +1,6 @@
 
 {
-    "hidden": "true",
+    "hidden": true,
     "type": "origins:elytra_flight",
     "render_elytra": true
   }

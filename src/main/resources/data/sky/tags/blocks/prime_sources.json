@@ -2,10 +2,10 @@
 {
     "replace": false,
     "values": [
-    "#minecraft:candle_cakes",
     "minecraft:soul_campfire",
     "minecraft:soul_torch",
     "minecraft:soul_wall_torch",
-    "minecraft:soul_lantern"
+    "minecraft:soul_lantern",
+    "minecraft:soul_fire"
     ]
   }

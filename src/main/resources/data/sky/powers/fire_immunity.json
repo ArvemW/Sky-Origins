@@ -1,0 +1,27 @@
+
+{
+    "name": "§6§nFire Adept",
+    "description": "You are immune to all fire damage, however, lava is still harmful.",
+    "type":"origins:modify_damage_taken",
+    "modifier":{
+      "value": -1,
+      "operation":"multiply_total"
+    },
+    "damage_condition":{
+      "type":"origins:or",
+      "conditions":[
+        {
+          "type":"origins:name",
+          "name":"onFire"
+        },
+        {
+          "type":"origins:name",
+          "name":"inFire"
+        },
+        {
+          "type":"origins:name",
+          "name":"hotFloor"
+        }
+      ]
+    }
+  }

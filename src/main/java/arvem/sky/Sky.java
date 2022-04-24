@@ -1,7 +1,6 @@
 package arvem.sky;
 
 import net.fabricmc.api.ModInitializer;
-import arvem.sky.Sounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

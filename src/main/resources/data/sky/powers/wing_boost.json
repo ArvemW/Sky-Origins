@@ -1,6 +1,6 @@
 {
     "type": "origins:active_self",
-    "name": "Wing Boost",
+    "name": "§nWing Boost",
     "description": "Trying to jump while gliding will use some light, but give you a short burst of speed to fly longer.",
     "entity_action": {
       "type": "origins:and",

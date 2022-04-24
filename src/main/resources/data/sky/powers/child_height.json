@@ -1,4 +1,5 @@
 {
+	"hidden": true,
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
 		"type": "origins:and",
@@ -20,7 +21,5 @@
     "entity_action_lost": {
         "type": "origins:execute_command",
         "command": "scale reset @s"
-    },
-    "hidden": "true",
-    "description": " "
+    }
 }
