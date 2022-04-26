@@ -12,7 +12,15 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "playsound sky:flap master @s ~ ~ ~ 0.8 1"
+          "command": "playsound sky:flap player @s ~ ~ ~ 0.8 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound sky:boost player @s ~ ~ ~ 0.65 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound sky:whoosh player @s ~ ~ ~ 0.65 1"
         },
         {
           "type": "origins:change_resource",

@@ -32,5 +32,41 @@
             "stream": false
         }
       ]
+    },
+    "boost": {
+        "category": "player",
+        "subtitle": "subtitles.sky.flap",
+        "sounds": [
+            {
+            "name": "sky:boost1",
+            "stream": false
+        },
+        {
+            "name": "sky:boost2",
+            "stream": false
+        },
+        {
+            "name": "sky:boost3",
+            "stream": false
+        }
+      ]
+    },
+    "whoosh": {
+        "category": "player",
+        "subtitle": "subtitles.sky.flap",
+        "sounds": [
+            {
+            "name": "sky:whoosh1",
+            "stream": false
+        },
+        {
+            "name": "sky:whoosh2",
+            "stream": false
+        },
+        {
+            "name": "sky:whoosh3",
+            "stream": false
+        }
+      ]
     }
   }
