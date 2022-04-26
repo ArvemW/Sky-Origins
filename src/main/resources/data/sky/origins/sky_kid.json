@@ -6,6 +6,7 @@
 		"sky:child_height",
 		"sky:health",
 		"sky:light",
+		"sky:depletion",
 		"sky:fire_immunity",
 		"sky:wing_boost",
 		"sky:lightweight",

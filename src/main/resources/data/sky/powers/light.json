@@ -5,7 +5,7 @@
     "resource":{
        "type":"origins:resource",
        "min":0,
-       "max":140,
+       "max":560,
        "hud_render":{
           "should_render":true,
           "sprite_location":"origins:textures/gui/resource_bar.png",
@@ -14,7 +14,7 @@
     },
     "light_gain":{
        "type":"origins:action_over_time",
-       "interval":20,
+       "interval":5,
        "entity_action":{
         "type":"origins:if_else_list",
         "actions":[
@@ -594,6 +594,6 @@
         
                 ]
        }
-    }
+   }
 }
  

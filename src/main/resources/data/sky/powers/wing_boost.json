@@ -25,7 +25,7 @@
         {
           "type": "origins:change_resource",
           "resource":"sky:light_resource",
-          "change":-40
+          "change":-160
         }
       ]
     },
@@ -39,7 +39,7 @@
               "type": "origins:resource",
               "resource": "sky:light_resource",
               "comparison": ">=",
-              "compare_to": 40
+              "compare_to": 160
           }
       ]
     },

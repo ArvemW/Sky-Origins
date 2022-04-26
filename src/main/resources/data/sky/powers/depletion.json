@@ -1,0 +1,63 @@
+{
+	"name": "§0§l§nNot of the darkness",
+	"description": "You lose light when wet in colder biomes.",
+       "type":"origins:action_over_time",
+       "interval":5,
+       "entity_action":{
+        "type":"origins:if_else_list",
+        "actions":[
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type":"origins:fluid_height",
+                        "fluid":"minecraft:water",
+                        "comparison":"==",
+                        "compare_to":0,
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:biome",
+                        "condition": {
+                            "type": "origins:temperature",
+                            "comparison": "<=",
+                            "compare_to": 0.05
+                        }
+                    }
+                    ]
+                     },
+            "action": {
+                "type":"origins:change_resource",
+                "resource":"sky:light_resource",
+                "change":-8
+               }
+               
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type":"origins:in_rain"
+                    },
+                    {
+                        "type": "origins:biome",
+                        "condition": {
+                            "type": "origins:temperature",
+                            "comparison": "<=",
+                            "compare_to": 0.05
+                        }
+                    }
+                ]
+            },
+            "action": {
+                "type":"origins:change_resource",
+                "resource":"sky:light_resource",
+                "change":-4
+               }
+            }
+        ]
+    }
+}
+ 
