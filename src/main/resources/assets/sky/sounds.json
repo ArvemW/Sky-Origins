@@ -68,5 +68,145 @@
             "stream": false
         }
       ]
+    },
+    "default": {
+        "category": "player",
+        "subtitle": "subtitles.sky.default_shout",
+        "sounds": [
+            {
+            "name": "sky:defaulta",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:defaultam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:defaultas",
+            "stream": false
+        },
+        {
+            "name": "sky:defaultc",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:defaultcm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:defaultcs",
+            "stream": false
+        },
+        {
+            "name": "sky:defaultcss",
+            "stream": false
+        },
+        {
+            "name": "sky:defaulte",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:defaultem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:defaultes",
+            "stream": false
+        },
+        {
+            "name": "sky:defaultess",
+            "stream": false
+        },
+        {
+            "name": "sky:defaultg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:defaultgm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:defaultgs",
+            "stream": false
+        }
+      ]
+    },
+    "bird": {
+        "category": "player",
+        "subtitle": "subtitles.sky.default_shout",
+        "sounds": [
+            {
+            "name": "sky:birda",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:birdam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:birdas",
+            "stream": false
+        },
+        {
+            "name": "sky:birdc",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:birdcm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:birdcs",
+            "stream": false
+        },
+        {
+            "name": "sky:birdcss",
+            "stream": false
+        },
+        {
+            "name": "sky:birde",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:birdem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:birdes",
+            "stream": false
+        },
+        {
+            "name": "sky:birdess",
+            "stream": false
+        },
+        {
+            "name": "sky:birdg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:birdgm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:birdgs",
+            "stream": false
+        }
+      ]
     }
   }
