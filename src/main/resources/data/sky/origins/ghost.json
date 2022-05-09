@@ -1,0 +1,12 @@
+
+{
+    "name": "Ghost Call",
+	"description": "",
+	"powers": [
+	],
+	"icon": {
+		"item": "minecraft:red_candle"
+	},
+	"order": 4,
+	"impact": 0
+}

@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "allow_random": true,
+    "name": "call",
+    "order": 4,
+    "enabled": true,
+    "origins": [
+        "sky:default",
+        "sky:bird",
+        "sky:crab",
+        "sky:ghost",
+        "sky:whale",
+        "sky:jelly",
+        "sky:manta"
+    ]
+  }

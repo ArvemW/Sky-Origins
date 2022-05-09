@@ -1,4 +1,10 @@
 {
     "subtitles.sky.flap": "Cape Flaps",
-    "subtitles.sky.default_shout": "Default Shout"
+    "subtitles.sky.default_shout": "Default Call",
+    "subtitles.sky.bird_shout": "Bird Call",
+    "subtitles.sky.crab_shout": "Crab Call",
+    "subtitles.sky.ghost_shout": "Ghost Call",
+    "subtitles.sky.whale_shout": "Whale Call",
+    "subtitles.sky.jelly_shout": "Jellyfish Call",
+    "subtitles.sky.manta_shout": "Manta Call"
 }

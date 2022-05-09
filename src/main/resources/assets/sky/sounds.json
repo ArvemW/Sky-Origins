@@ -168,7 +168,7 @@
     },
     "bird": {
         "category": "player",
-        "subtitle": "subtitles.sky.default_shout",
+        "subtitle": "subtitles.sky.bird_shout",
         "sounds": [
             {
             "name": "sky:birda",
@@ -232,6 +232,356 @@
         },
         {
             "name": "sky:birdgs",
+            "stream": false
+        }
+      ]
+    },
+    "crab": {
+        "category": "player",
+        "subtitle": "subtitles.sky.crab_shout",
+        "sounds": [
+            {
+            "name": "sky:craba",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:crabam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:crabas",
+            "stream": false
+        },
+        {
+            "name": "sky:crabc",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:crabcm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:crabcs",
+            "stream": false
+        },
+        {
+            "name": "sky:crabcss",
+            "stream": false
+        },
+        {
+            "name": "sky:crabe",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:crabem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:crabes",
+            "stream": false
+        },
+        {
+            "name": "sky:crabess",
+            "stream": false
+        },
+        {
+            "name": "sky:crabg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:crabgm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:crabgs",
+            "stream": false
+        }
+      ]
+    },
+    "ghost": {
+        "category": "player",
+        "subtitle": "subtitles.sky.ghost_shout",
+        "sounds": [
+            {
+            "name": "sky:ghosta",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:ghostam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:ghostas",
+            "stream": false
+        },
+        {
+            "name": "sky:ghostc",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:ghostcm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:ghostcs",
+            "stream": false
+        },
+        {
+            "name": "sky:ghostcss",
+            "stream": false
+        },
+        {
+            "name": "sky:ghoste",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:ghostem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:ghostes",
+            "stream": false
+        },
+        {
+            "name": "sky:ghostess",
+            "stream": false
+        },
+        {
+            "name": "sky:ghostg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:ghostgm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:ghostgs",
+            "stream": false
+        }
+      ]
+    },
+    "jelly": {
+        "category": "player",
+        "subtitle": "subtitles.sky.jelly_shout",
+        "sounds": [
+            {
+            "name": "sky:jellya",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:jellyam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:jellyas",
+            "stream": false
+        },
+        {
+            "name": "sky:jellyc",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:jellycm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:jellycs",
+            "stream": false
+        },
+        {
+            "name": "sky:jellycss",
+            "stream": false
+        },
+        {
+            "name": "sky:jellye",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:jellyem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:jellyes",
+            "stream": false
+        },
+        {
+            "name": "sky:jellyess",
+            "stream": false
+        },
+        {
+            "name": "sky:jellyg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:jellygm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:jellygs",
+            "stream": false
+        }
+      ]
+    },
+    "whale": {
+        "category": "player",
+        "subtitle": "subtitles.sky.whale_shout",
+        "sounds": [
+            {
+            "name": "sky:whalea",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:whaleam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:whaleas",
+            "stream": false
+        },
+        {
+            "name": "sky:whalec",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:whalecm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:whalecs",
+            "stream": false
+        },
+        {
+            "name": "sky:whalecss",
+            "stream": false
+        },
+        {
+            "name": "sky:whalee",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:whaleem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:whalees",
+            "stream": false
+        },
+        {
+            "name": "sky:whaleess",
+            "stream": false
+        },
+        {
+            "name": "sky:whaleg",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:whalegm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:whalegs",
+            "stream": false
+        }
+      ]
+    },
+    "manta": {
+        "category": "player",
+        "subtitle": "subtitles.sky.manta_shout",
+        "sounds": [
+            {
+            "name": "sky:mantaa",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:mantaam",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:mantaas",
+            "stream": false
+        },
+        {
+            "name": "sky:mantac",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:mantacm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:mantacs",
+            "stream": false
+        },
+        {
+            "name": "sky:mantacss",
+            "stream": false
+        },
+        {
+            "name": "sky:mantae",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:mantaem",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:mantaes",
+            "stream": false
+        },
+        {
+            "name": "sky:mantaess",
+            "stream": false
+        },
+        {
+            "name": "sky:mantag",
+            "stream": false,
+            "weight": 3
+        },
+        {
+            "name": "sky:mantagm",
+            "stream": false,
+            "weight": 2
+        },
+        {
+            "name": "sky:mantags",
             "stream": false
         }
       ]
