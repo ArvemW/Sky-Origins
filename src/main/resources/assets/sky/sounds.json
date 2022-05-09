@@ -69,6 +69,33 @@
         }
       ]
     },
+    "beatslow": {
+        "category": "player",
+        "sounds": [
+            {
+            "name": "sky:beatslow",
+            "stream": false
+        }
+      ]
+    },
+    "beatmid": {
+        "category": "player",
+        "sounds": [
+            {
+            "name": "sky:beatmid",
+            "stream": false
+        }
+      ]
+    },
+    "beatfast": {
+        "category": "player",
+        "sounds": [
+            {
+            "name": "sky:beatfast",
+            "stream": false
+        }
+      ]
+    },
     "default": {
         "category": "player",
         "subtitle": "subtitles.sky.default_shout",

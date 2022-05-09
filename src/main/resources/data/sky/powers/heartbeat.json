@@ -1,0 +1,81 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "beat_slow": {
+        "type": "origins:action_over_time",
+        "interval": 37,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "sky:armor_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 8
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "playsound sky:beatslow player @s ~ ~ ~ 0.8 1"
+        }
+    },
+    "beat_mid": {
+        "type": "origins:action_over_time",
+        "interval": 23,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "sky:armor_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": "<",
+                    "compare_to": 8
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 4
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "playsound sky:beatmid player @s ~ ~ ~ 0.9 1"
+        }
+    },
+    "beat_fast": {
+        "type": "origins:action_over_time",
+        "interval": 17,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "sky:armor_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": "<",
+                    "compare_to": 4
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "playsound sky:beatfast player @s ~ ~ ~ 1 1"
+        }
+    }
+}

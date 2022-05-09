@@ -12,7 +12,8 @@
 		"sky:healing_call",
 		"sky:child_height",
 		"sky:health",
-		"sky:lightweight"
+		"sky:lightweight",
+		"sky:heartbeat"
 	],
 	"icon": {
 		"item": "minecraft:red_candle"

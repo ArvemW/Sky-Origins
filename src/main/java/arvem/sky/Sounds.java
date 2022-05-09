@@ -15,6 +15,12 @@ public class Sounds {
     public static SoundEvent DEFAULTSHOUT = new SoundEvent(DEFAULT_SHOUT);
 	public static final Identifier BIRD_SHOUT = new Identifier("sky:player.bird");
     public static SoundEvent BIRDSHOUT = new SoundEvent(BIRD_SHOUT);
+	public static final Identifier BEAT_SLOW = new Identifier("sky:player.beatslow");
+    public static SoundEvent BEATSLOW = new SoundEvent(BEAT_SLOW);
+	public static final Identifier BEAT_MID = new Identifier("sky:player.beatmid");
+    public static SoundEvent BEATMID = new SoundEvent(BEAT_MID);
+	public static final Identifier BEAT_FAST = new Identifier("sky:player.beatfast");
+    public static SoundEvent BEATFAST = new SoundEvent(BEAT_FAST);
 
 	static SoundEvent registerflap() {
 		return Registry.register(Registry.SOUND_EVENT, CAPE_FLAP, CAPEFLAP);
@@ -24,6 +30,15 @@ public class Sounds {
 	}
 	static SoundEvent registerwhoosh() {
 		return Registry.register(Registry.SOUND_EVENT, CAPE_WHOOSH, CAPEWHOOSH);
+	}
+	static SoundEvent registerbeatslow() {
+		return Registry.register(Registry.SOUND_EVENT, BEAT_SLOW, BEATSLOW);
+	}
+	static SoundEvent registerbeatmid() {
+		return Registry.register(Registry.SOUND_EVENT, BEAT_MID, BEATMID);
+	}
+	static SoundEvent registerbeatfast() {
+		return Registry.register(Registry.SOUND_EVENT, BEAT_FAST, BEATFAST);
 	}
 	static SoundEvent registerdefaultshout() {
 		return Registry.register(Registry.SOUND_EVENT, DEFAULT_SHOUT, DEFAULTSHOUT);

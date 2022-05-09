@@ -18,6 +18,9 @@ public class Sky implements ModInitializer {
 		Sounds.registerflap();
 		Sounds.registerboost();
 		Sounds.registerwhoosh();
+		Sounds.registerbeatslow();
+		Sounds.registerbeatmid();
+		Sounds.registerbeatfast();
 		Sounds.registerdefaultshout();
 		Sounds.registerbirdshout();
 		LOGGER.info("Hello Fabric world!");
