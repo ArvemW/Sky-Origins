@@ -15,8 +15,13 @@
                 },
                 {
                     "type": "origins:health",
+                    "comparison": "<",
+                    "compare_to": 7
+                },
+                {
+                    "type": "origins:health",
                     "comparison": ">=",
-                    "compare_to": 8
+                    "compare_to": 5
                 }
             ]
         },
@@ -40,12 +45,12 @@
                 {
                     "type": "origins:health",
                     "comparison": "<",
-                    "compare_to": 8
+                    "compare_to": 5
                 },
                 {
                     "type": "origins:health",
                     "comparison": ">=",
-                    "compare_to": 4
+                    "compare_to": 2
                 }
             ]
         },
@@ -56,7 +61,7 @@
     },
     "beat_fast": {
         "type": "origins:action_over_time",
-        "interval": 17,
+        "interval": 15,
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -69,13 +74,33 @@
                 {
                     "type": "origins:health",
                     "comparison": "<",
-                    "compare_to": 4
+                    "compare_to": 2
                 }
             ]
         },
         "entity_action": {
             "type": "origins:execute_command",
             "command": "playsound sky:beatfast player @s ~ ~ ~ 1 1"
+        }
+    },
+    "pencil_vision": {
+        "type": "origins:shader",
+        "shader": "minecraft:shaders/post/desaturate.json",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "sky:armor_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": "<",
+                    "compare_to": 7
+                }
+            ]
         }
     }
 }

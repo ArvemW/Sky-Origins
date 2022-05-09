@@ -9,36 +9,167 @@
         "type": "origins:and",
         "actions": [
             {
-                "type": "origins:spawn_effect_cloud",
-                "radius": 5,
-                "wait_time": 5,
-                "effect": {
-                    "effect": "minecraft:instant_health",
-                    "amplifier": 0,
-                    "duration": 1,
-                    "show_particles": false,
-                    "show_icon": false
-                }
+            "type": "origins:area_of_effect",
+            "radius": 5,
+            "bientity_condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type":"origins:target_condition",
+                        "condition": {
+                            "type":"origins:entity_type",
+                            "entity_type": "minecraft:skeleton_horse"
+                        }
+                    },
+                    {
+                        "type":"origins:target_condition",
+                        "condition": {
+                            "type":"origins:entity_type",
+                            "entity_type": "minecraft:zombie_horse"
+                        }
+                    }
+                ]
             },
-            {
-                "type": "origins:change_resource",
-                "resource": "sky:armor_resource",
-                "change": -240
-            },
-            {
-                "type": "origins:play_sound",
-                "sound": "minecraft:entity.evoker.cast_spell"
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:instant_damage",
+                                "amplifier": 0,
+                                "duration": 1,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:instant_damage",
+                                "amplifier": 0,
+                                "duration": 1,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        }
+                    }
+                ]
             }
-        ]
-    },
-    "condition": {
-        "type": "origins:resource",
-        "resource": "sky:armor_resource",
-        "comparison": ">=",
-        "compare_to": 240
-    },
-    "hud_render": {
-        "should_render": false
-    },
-    "cooldown": 5
+        },
+        {
+            "type": "origins:area_of_effect",
+            "radius": 5,
+            "bientity_condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:both",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:player"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:iron_golem"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:wolf"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:cat"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:horse"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:donkey"
+                        }
+                    },
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:mule"
+                        }
+                    }
+                ]
+            },
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:instant_health",
+                                "amplifier": 0,
+                                "duration": 1,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:instant_health",
+                                "amplifier": 0,
+                                "duration": 1,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:change_resource",
+            "resource": "sky:armor_resource",
+            "change": -240
+        },
+        {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.evoker.cast_spell"
+        }
+    ]
+},
+"condition": {
+    "type": "origins:resource",
+    "resource": "sky:armor_resource",
+    "comparison": ">=",
+    "compare_to": 240
+},
+"hud_render": {
+    "should_render": false
+},
+"cooldown": 5
 }

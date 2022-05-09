@@ -3,10 +3,49 @@
   "name": "§nSky's Call",
   "description": " ",
   "entity_action": {
-    "type": "origins:execute_command",
-    "command": "playsound sky:default player @s ~ ~ ~ 0.8 1"
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "playsound sky:default player @s ~ ~ ~ 0.8 1"
+            },
+            {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:glowing",
+                "duration": 5,
+                "show_icon": false,
+                "show_particles": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:sneaking"
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "playsound sky:default player @s ~ ~ ~ 0.8 1"
+            }
+          ]
+        }
+      }
+    ]
   },
-  "cooldown": 2,
+  "cooldown": 4,
   "hud_render": {
     "should_render": false,
     "bar_index": 4

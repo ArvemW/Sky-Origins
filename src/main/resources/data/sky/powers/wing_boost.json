@@ -7,25 +7,25 @@
     "actions": [
       {
         "type": "origins:add_velocity",
-        "z": 0.8,
+        "z": 0.4,
         "space": "local"
       },
       {
         "type": "origins:execute_command",
-        "command": "playsound sky:flap player @s ~ ~ ~ 0.8 1"
+        "command": "playsound sky:flap player @a ~ ~ ~ 0.8 1"
       },
       {
         "type": "origins:execute_command",
-        "command": "playsound sky:boost player @s ~ ~ ~ 0.65 1"
+        "command": "playsound sky:boost player @a ~ ~ ~ 0.65 1"
       },
       {
         "type": "origins:execute_command",
-        "command": "playsound sky:whoosh player @s ~ ~ ~ 0.65 1"
+        "command": "playsound sky:whoosh player @a ~ ~ ~ 0.65 1"
       },
       {
         "type": "origins:change_resource",
         "resource": "sky:armor_resource",
-        "change": -160
+        "change": -80
       }
     ]
   },
@@ -39,7 +39,7 @@
         "type": "origins:resource",
         "resource": "sky:armor_resource",
         "comparison": ">=",
-        "compare_to": 160
+        "compare_to": 80
       }
     ]
   },
