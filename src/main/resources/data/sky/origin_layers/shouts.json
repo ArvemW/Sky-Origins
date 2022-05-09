@@ -5,12 +5,21 @@
     "order": 4,
     "enabled": true,
     "origins": [
-        "sky:default",
-        "sky:bird",
-        "sky:crab",
-        "sky:ghost",
-        "sky:whale",
-        "sky:jelly",
-        "sky:manta"
+        {
+            "condition": {
+                "type": "origins:origin",
+                "layer": "origins:origin",
+                "origin": "sky:sky_kid"
+            },
+            "origins": [
+                "sky:default",
+                "sky:bird",
+                "sky:crab",
+                "sky:ghost",
+                "sky:whale",
+                "sky:jelly",
+                "sky:manta"
+            ]
+        }
     ]
-  }
+}

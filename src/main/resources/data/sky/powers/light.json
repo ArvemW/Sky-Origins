@@ -2,15 +2,6 @@
    "name": "§e§nBorn of the Light",
    "description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles on cakes being the most efficient way to recharge. You can only gather light from three sources at a time, with the best light sources taking priority.",
    "type": "origins:multiple",
-   "fellowship":{
-      "type":"origins:action_over_time",
-      "interval": 5,
-      "entity_action": {
-         "type":"origins:change_resource",
-         "resource": "sky:armor_resource",
-         "change": 5
-      }
-   },
    "light_gain": {
       "type": "origins:action_over_time",
       "interval": 5,
