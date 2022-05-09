@@ -1,0 +1,44 @@
+{
+    "name": "Healing Support",
+    "description": "You have the ability to heal your allies/yourself!",
+    "type": "origins:active_self",
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:spawn_effect_cloud",
+                "radius": 5,
+                "wait_time": 5,
+                "effect": {
+                    "effect": "minecraft:instant_health",
+                    "amplifier": 0,
+                    "duration": 1,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "sky:armor_resource",
+                "change": -240
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.evoker.cast_spell"
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "sky:armor_resource",
+        "comparison": ">=",
+        "compare_to": 240
+    },
+    "hud_render": {
+        "should_render": false
+    },
+    "cooldown": 5
+}

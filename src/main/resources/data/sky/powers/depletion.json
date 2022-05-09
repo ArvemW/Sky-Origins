@@ -1,18 +1,61 @@
 {
-    "type": "origins:active_self",
-    "name": "§nSky's Call",
-    "description": " ",
+    "name": "§0§l§nNot of the darkness",
+    "description": "You lose light when wet in colder biomes.",
+    "type": "origins:action_over_time",
+    "interval": 5,
     "entity_action": {
-        "type": "origins:execute_command",
-        "command": "playsound sky:default player @s ~ ~ ~ 0.8 1"
-    },
-    "cooldown": 2,
-    "hud_render": {
-      "should_render": false,
-      "bar_index": 4
-    },
-    "key": {
-      "key": "key.origins.primary_active",
-      "continuous": false
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": "==",
+                            "compare_to": 0,
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.05
+                            }
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:change_resource",
+                    "resource": "sky:armor_resource",
+                    "change": -8
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:in_rain"
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.05
+                            }
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:change_resource",
+                    "resource": "sky:armor_resource",
+                    "change": -4
+                }
+            }
+        ]
     }
-  }
+}

@@ -1,599 +1,2244 @@
 {
-	"name": "§e§nBorn of the Light",
-	"description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles being the most efficient way to recharge. Light serves as a shield from damage, using up light whenever it has to protect you. The amount used varies from the amount of damage. If your light runs out, you will start to be able to take damage.",
-    "type":"origins:multiple",
-    "resource":{
-       "type":"origins:resource",
-       "min":0,
-       "max":560,
-       "hud_render":{
-          "should_render":true,
-          "sprite_location":"origins:textures/gui/resource_bar.png",
-          "bar_index":7
-       }
-    },
-    "light_gain":{
-       "type":"origins:action_over_time",
-       "interval":5,
-       "entity_action":{
-        "type":"origins:if_else_list",
-        "actions":[
-         {
-            "condition": {
-               "type":"origins:and",
-               "conditions":[
-                  {
-                     "type":"origins:fluid_height",
-                     "fluid":"minecraft:water",
-                     "comparison":"==",
-                     "compare_to":0
-                  },
-                  {
-                     "type": "origins:block_in_radius",
-                     "block_condition": {
-                        "type": "origins:in_tag",
-                        "tag": "minecraft:candle_cakes"
+   "name": "§e§nBorn of the Light",
+   "description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles on cakes being the most efficient way to recharge. You can only gather light from three sources at a time, with the best light sources taking priority.",
+   "type": "origins:multiple",
+   "light_gain": {
+      "type": "origins:action_over_time",
+      "interval": 5,
+      "entity_action": {
+         "type": "origins:if_else_list",
+         "actions": [
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
                      },
-                     "radius": 2,
-                     "comparison": ">=",
-                     "compare_to": 1
-                  },
-                  {
-                     "type":"origins:in_rain",
-                     "inverted":true
-                  }
-               ]
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "minecraft:candle_cakes"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    }
+                                 ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 15
+               }
             },
-            "action": {
-               "type":"origins:change_resource",
-               "resource":"sky:light_resource",
-               "change":15
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 3
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 12
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:and",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:candles"
+                              },
+                              {
+                                 "type": "origins:block_state",
+                                 "property": "lit",
+                                 "value": true
+                              },
+                              {
+                                 "type": "origins:block_state",
+                                 "property": "candles",
+                                 "enum": "3",
+                                 "comparison": "==",
+                                 "compare_to": 3
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 11
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 10
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 10
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 9
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 3
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 9
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 8
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 8
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 7
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 7
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 7
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 3
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 6
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 6
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 6
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": ">=",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 5
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 5
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 5
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:prime_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "4",
+                                       "comparison": "==",
+                                       "compare_to": 4
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 4
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 4
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 4
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:average_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "2",
+                                       "comparison": "==",
+                                       "compare_to": 2
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 2
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 4
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:or",
+                  "conditions": [
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:or",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:weak_sources"
+                                    },
+                                    {
+                                       "type": "origins:and",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:candles"
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "lit",
+                                             "value": true
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "candles",
+                                             "enum": "1",
+                                             "comparison": "==",
+                                             "compare_to": 1
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": ">=",
+                              "compare_to": 3
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     },
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:and",
+                              "conditions": [
+                                 {
+                                    "type": "origins:block_in_radius",
+                                    "block_condition": {
+                                       "type": "origins:or",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:average_sources"
+                                          },
+                                          {
+                                             "type": "origins:and",
+                                             "conditions": [
+                                                {
+                                                   "type": "origins:in_tag",
+                                                   "tag": "sky:candles"
+                                                },
+                                                {
+                                                   "type": "origins:block_state",
+                                                   "property": "lit",
+                                                   "value": true
+                                                },
+                                                {
+                                                   "type": "origins:block_state",
+                                                   "property": "candles",
+                                                   "enum": "2",
+                                                   "comparison": "==",
+                                                   "compare_to": 2
+                                                }
+                                             ]
+                                          }
+                                       ]
+                                    },
+                                    "radius": 2,
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                 },
+                                 {
+                                    "type": "origins:block_in_radius",
+                                    "block_condition": {
+                                       "type": "origins:or",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:weak_sources"
+                                          },
+                                          {
+                                             "type": "origins:and",
+                                             "conditions": [
+                                                {
+                                                   "type": "origins:in_tag",
+                                                   "tag": "sky:candles"
+                                                },
+                                                {
+                                                   "type": "origins:block_state",
+                                                   "property": "lit",
+                                                   "value": true
+                                                },
+                                                {
+                                                   "type": "origins:block_state",
+                                                   "property": "candles",
+                                                   "enum": "1",
+                                                   "comparison": "==",
+                                                   "compare_to": 1
+                                                }
+                                             ]
+                                          }
+                                       ]
+                                    },
+                                    "radius": 2,
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     },
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:or",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:weak_sources"
+                                    },
+                                    {
+                                       "type": "origins:and",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:candles"
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "lit",
+                                             "value": true
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "candles",
+                                             "enum": "1",
+                                             "comparison": "==",
+                                             "compare_to": 1
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": "==",
+                              "compare_to": 2
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     },
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:or",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:weak_sources"
+                                    },
+                                    {
+                                       "type": "origins:and",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:candles"
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "lit",
+                                             "value": true
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "candles",
+                                             "enum": "1",
+                                             "comparison": "==",
+                                             "compare_to": 1
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": "==",
+                              "compare_to": 2
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     },
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "3",
+                                       "comparison": "==",
+                                       "compare_to": 3
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": "==",
+                              "compare_to": 1
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 3
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:or",
+                  "conditions": [
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:or",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:weak_sources"
+                                    },
+                                    {
+                                       "type": "origins:and",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:candles"
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "lit",
+                                             "value": true
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "candles",
+                                             "enum": "1",
+                                             "comparison": "==",
+                                             "compare_to": 1
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": "==",
+                              "compare_to": 2
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     },
+                     {
+                        "type": "origins:and",
+                        "conditions": [
+                           {
+                              "type": "origins:fluid_height",
+                              "fluid": "minecraft:water",
+                              "comparison": "==",
+                              "compare_to": 0
+                           },
+                           {
+                              "type": "origins:block_in_radius",
+                              "block_condition": {
+                                 "type": "origins:or",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:average_sources"
+                                    },
+                                    {
+                                       "type": "origins:and",
+                                       "conditions": [
+                                          {
+                                             "type": "origins:in_tag",
+                                             "tag": "sky:candles"
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "lit",
+                                             "value": true
+                                          },
+                                          {
+                                             "type": "origins:block_state",
+                                             "property": "candles",
+                                             "enum": "2",
+                                             "comparison": "==",
+                                             "compare_to": 2
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              },
+                              "radius": 2,
+                              "comparison": "==",
+                              "compare_to": 1
+                           },
+                           {
+                              "type": "origins:in_rain",
+                              "inverted": true
+                           }
+                        ]
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 2
+               }
+            },
+            {
+               "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                     {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                     },
+                     {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                           "type": "origins:or",
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "sky:weak_sources"
+                              },
+                              {
+                                 "type": "origins:and",
+                                 "conditions": [
+                                    {
+                                       "type": "origins:in_tag",
+                                       "tag": "sky:candles"
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "lit",
+                                       "value": true
+                                    },
+                                    {
+                                       "type": "origins:block_state",
+                                       "property": "candles",
+                                       "enum": "1",
+                                       "comparison": "==",
+                                       "compare_to": 1
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        "radius": 2,
+                        "comparison": "==",
+                        "compare_to": 1
+                     },
+                     {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                     }
+                  ]
+               },
+               "action": {
+                  "type": "origins:change_resource",
+                  "resource": "sky:armor_resource",
+                  "change": 1
+               }
             }
-         },
-         {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:prime_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 3
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":12
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:prime_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 2
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":10
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:prime_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 2
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":9
-               }
-            },
-            {
-               
-                "condition": {
-                    "type":"origins:and",
-                    "conditions":[
-                       {
-                          "type":"origins:fluid_height",
-                          "fluid":"minecraft:water",
-                          "comparison":"==",
-                          "compare_to":0
-                       },
-                       {
-                          "type": "origins:block_in_radius",
-                          "block_condition": {
-                              "type": "origins:in_tag",
-                              "tag": "sky:prime_sources"
-                          },
-                          "radius": 2,
-                          "comparison": "==",
-                          "compare_to": 2
-                       },
-                       {
-                          "type":"origins:in_rain",
-                          "inverted":true
-                       }
-                    ]
-                },
-                "action": {
-                    "type":"origins:change_resource",
-                    "resource":"sky:light_resource",
-                    "change":8
-                }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 3
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":6
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:prime_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":6
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:prime_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":5
-               }
-            },
-            {
-                "condition": {
-                    "type":"origins:and",
-                    "conditions":[
-                       {
-                          "type":"origins:fluid_height",
-                          "fluid":"minecraft:water",
-                          "comparison":"==",
-                          "compare_to":0
-                       },
-                       {
-                          "type": "origins:block_in_radius",
-                          "block_condition": {
-                              "type": "origins:in_tag",
-                              "tag": "sky:prime_sources"
-                          },
-                          "radius": 2,
-                          "comparison": "==",
-                          "compare_to": 1
-                       },
-                       {
-                          "type":"origins:in_rain",
-                          "inverted":true
-                       }
-                    ]
-                },
-                "action": {
-                    "type":"origins:change_resource",
-                    "resource":"sky:light_resource",
-                    "change":4
-                }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 2
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":4
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 2
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":4
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": ">=",
-                        "compare_to": 3
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":3
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":3
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 2
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":2
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:average_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":2
-               }
-            },
-            {
-               "condition": {
-                  "type":"origins:and",
-                  "conditions":[
-                     {
-                        "type":"origins:fluid_height",
-                        "fluid":"minecraft:water",
-                        "comparison":"==",
-                        "compare_to":0
-                     },
-                     {
-                        "type": "origins:block_in_radius",
-                        "block_condition": {
-                           "type": "origins:in_tag",
-                           "tag": "sky:weak_sources"
-                        },
-                        "radius": 2,
-                        "comparison": "==",
-                        "compare_to": 1
-                     },
-                     {
-                        "type":"origins:in_rain",
-                        "inverted":true
-                     }
-                  ]
-               },
-               "action": {
-                  "type":"origins:change_resource",
-                  "resource":"sky:light_resource",
-                  "change":1
-               }
-            }
-        
-                ]
-       }
+         ]
+      }
    }
 }
- 

@@ -1,6 +1,6 @@
 {
     "name": "§nFree Spirit",
-    "description": "Your flight is hindered by chest and leg pieces, so you've instead done away with them.",
+    "description": "Your flight is hindered by chest and leg pieces, so you've instead done away with them. Besides, physical armor doesn't protect your Light.",
     "loading_priority": 7,
     "type": "origins:restrict_armor",
     "chest": {

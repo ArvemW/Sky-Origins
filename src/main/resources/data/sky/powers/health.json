@@ -1,6 +1,6 @@
 {
     "name": "§nChildish Aspects",
-    "description": "You are a child. Therefore, you are delicate and petite in comparison.",
+    "description": "You are a child. Therefore, you are delicate and petite, having only four hearts if your Light runs out. You are just short enough to fit in one block gaps when crouching.",
     "type": "origins:attribute",
     "modifier": {
       "name": "Fragile health reduction",

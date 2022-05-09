@@ -1,16 +1,18 @@
 
 {
     "name": "Child of the Light",
-	"description": "With the stars united, our light was infinite. But darkness came and the stars fell, creating a new home in the clouds. A long time has passed... it is time to bring our lost stars home. Wake up Child of the Light, your adventure begins now.",
+	"description": "With the stars united, our light was infinite. But darkness came and the stars fell. A long time has passed... wake up Child of the Light, your adventure begins now.",
 	"powers": [
-		"sky:child_height",
-		"sky:health",
 		"sky:light",
 		"sky:depletion",
+		"sky:armor",
 		"sky:fire_immunity",
+		"sky:cape",
 		"sky:wing_boost",
-		"sky:lightweight",
-		"sky:cape"
+		"sky:healing_call",
+		"sky:child_height",
+		"sky:health",
+		"sky:lightweight"
 	],
 	"icon": {
 		"item": "minecraft:red_candle"

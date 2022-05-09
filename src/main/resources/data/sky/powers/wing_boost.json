@@ -1,55 +1,54 @@
 {
-    "type": "origins:active_self",
-    "name": "§nWing Boost",
-    "description": "Trying to jump while gliding will use some light, but give you a short burst of speed to fly longer.",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:add_velocity",
-          "z": 0.8,
-          "space": "local"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "playsound sky:flap player @s ~ ~ ~ 0.8 1"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "playsound sky:boost player @s ~ ~ ~ 0.65 1"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "playsound sky:whoosh player @s ~ ~ ~ 0.65 1"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource":"sky:light_resource",
-          "change":-160
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-          {
-              "type": "origins:fall_flying"
-          },
-          {
-              "type": "origins:resource",
-              "resource": "sky:light_resource",
-              "comparison": ">=",
-              "compare_to": 160
-          }
-      ]
-    },
-    "cooldown": 5,
-    "hud_render": {
-      "should_render": false,
-      "bar_index": 4
-    },
-    "key": {
-      "key": "key.jump",
-      "continuous": false
-    }
+  "type": "origins:active_self",
+  "name": "§nCape Boost",
+  "description": "Trying to jump while gliding will use some Light, but give you a short burst of speed to fly longer.",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:add_velocity",
+        "z": 0.8,
+        "space": "local"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound sky:flap player @s ~ ~ ~ 0.8 1"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound sky:boost player @s ~ ~ ~ 0.65 1"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound sky:whoosh player @s ~ ~ ~ 0.65 1"
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "sky:armor_resource",
+        "change": -160
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:fall_flying"
+      },
+      {
+        "type": "origins:resource",
+        "resource": "sky:armor_resource",
+        "comparison": ">=",
+        "compare_to": 160
+      }
+    ]
+  },
+  "cooldown": 5,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.jump",
+    "continuous": false
   }
+}
