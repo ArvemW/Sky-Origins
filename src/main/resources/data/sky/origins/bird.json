@@ -1,9 +1,7 @@
-
 {
-    "name": "Bird Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Bird Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},

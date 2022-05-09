@@ -1,9 +1,7 @@
-
 {
-    "name": "Default Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Default Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},

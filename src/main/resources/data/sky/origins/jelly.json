@@ -1,9 +1,7 @@
-
 {
-    "name": "Jellyfish Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Jellyfish Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},

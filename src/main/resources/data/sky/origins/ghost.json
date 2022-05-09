@@ -1,9 +1,7 @@
-
 {
-    "name": "Ghost Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Ghost Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},

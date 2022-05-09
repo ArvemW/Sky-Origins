@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "sky",
-  "version": "${version}",
+  "version": "0.2.1",
 
   "name": "Sky Origin",
-  "description": "This mod adds the opportunity to be a Child of The Light from Sky: COTL. Alongside this, it adds some extra content from Sky.",
+  "description": "This mod adds the opportunity to be a Child of The Light from Sky: COTL with the Origins mod.",
   "authors": [
     "Arvem"
   ],

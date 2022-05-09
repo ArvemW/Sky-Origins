@@ -1,9 +1,7 @@
-
 {
-    "name": "Whale Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Whale Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},

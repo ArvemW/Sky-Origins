@@ -1,9 +1,7 @@
-
 {
-    "name": "Crab Call",
-	"description": "",
-	"powers": [
-	],
+	"name": "Crab Call",
+	"description": " ",
+	"powers": [],
 	"icon": {
 		"item": "minecraft:red_candle"
 	},
