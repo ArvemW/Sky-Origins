@@ -1,0 +1,11 @@
+{
+    "name": "Bulky and Unwieldy",
+    "description": "Due to your small hands and short stature, shields are too bulky and unwieldy for you to actually use.",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:shields"
+      }
+    }
+  }

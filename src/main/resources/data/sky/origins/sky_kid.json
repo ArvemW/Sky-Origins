@@ -14,7 +14,8 @@
 		"sky:child_height",
 		"sky:health",
 		"sky:lightweight",
-		"sky:heartbeat"
+		"sky:heartbeat",
+		"sky:shield_restrict"
 	],
 	"icon": {
 		"item": "minecraft:red_candle"
