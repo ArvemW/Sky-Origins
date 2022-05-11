@@ -1,7 +1,6 @@
 {
   "type": "origins:active_self",
   "hidden": true,
-  "description": " ",
   "entity_action": {
     "type": "origins:if_else_list",
     "actions": [

@@ -1,4 +1,7 @@
 {
+    "item.sky.weak_wl": "Weak Winged Light",
+    "death.attack.lightout": "%1$s ran out of light",
+    "death.attack.lightout.player": "%1$s ran out of light whilst fighting %2$s",
     "subtitles.sky.flap": "Cape Flaps",
     "subtitles.sky.default_shout": "Default Call",
     "subtitles.sky.bird_shout": "Bird Call",

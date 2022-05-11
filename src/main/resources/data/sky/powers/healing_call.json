@@ -1,6 +1,6 @@
 {
     "name": "§nSky's Call",
-    "description": "As your secondary ability, you can spend almost half of your Light in order to heal allies around you!",
+    "description": "Your primary ability will make a calling sound, which briefly makes you glow unless you're crouching. As your secondary ability, you can spend a considerable portion of your Light in order to heal allies around you.",
     "type": "origins:active_self",
     "key": {
         "key": "key.origins.secondary_active"

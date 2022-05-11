@@ -1,6 +1,7 @@
 
 {
-    "hidden": true,
+    "name": "§nLight Cape",
+    "description": "With the power of your Light, you can glide with a special cape.",
     "type": "origins:elytra_flight",
     "render_elytra": true
   }
