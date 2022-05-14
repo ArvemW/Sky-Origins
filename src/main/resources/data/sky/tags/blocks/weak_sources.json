@@ -3,6 +3,7 @@
     "replace": false,
     "values": [
     "minecraft:glow_lichen",
-    "minecraft:cave_vines_plant"
+    "minecraft:cave_vines_plant",
+    "minecraft:glow_item_frame"
     ]
   }

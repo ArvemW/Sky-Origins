@@ -2,6 +2,142 @@
    "name": "§e§nBorn of the Light",
    "description": "You store light inside of yourself. Light can be recharged from resting near light sources, with candles on cakes being the most efficient way to recharge. You can only gather light from three sources at a time, with the best light sources taking priority.",
    "type": "origins:multiple",
+   "main_prime": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 3
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "mainhand",
+         "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+               "tag": "sky:prime_sources"
+            }
+         }
+      },
+      "interval": 5
+   },
+   "main_average": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 2
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "mainhand",
+         "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+               "tag": "sky:average_sources"
+            }
+         }
+      },
+      "interval": 5
+   },
+   "main_weak": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 1
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "mainhand",
+         "item_condition": {
+            "type": "origins:or",
+            "conditions": [
+               {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                     "tag": "sky:weak_sources"
+                  }
+               },
+               {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                     "tag": "minecraft:candles"
+                  }
+               }
+            ]
+         }
+      },
+      "interval": 5
+   },
+   "offhand_prime": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 3
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "offhand",
+         "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+               "tag": "sky:prime_sources"
+            }
+         }
+      },
+      "interval": 5
+   },
+   "offhand_average": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 2
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "offhand",
+         "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+               "tag": "sky:average_sources"
+            }
+         }
+      },
+      "interval": 5
+   },
+   "offhand_weak": {
+      "type": "origins:action_over_time",
+      "entity_action": {
+         "type": "origins:change_resource",
+         "resource": "sky:armor_resource",
+         "change": 1
+      },
+      "condition": {
+         "type": "origins:equipped_item",
+         "equipment_slot": "offhand",
+         "item_condition": {
+            "type": "origins:or",
+            "conditions": [
+               {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                     "tag": "sky:weak_sources"
+                  }
+               },
+               {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                     "tag": "minecraft:candles"
+                  }
+               }
+            ]
+         }
+      },
+      "interval": 5
+   },
    "light_gain": {
       "type": "origins:action_over_time",
       "interval": 5,
@@ -22,17 +158,17 @@
                         "type": "origins:block_in_radius",
                         "block_condition": {
                            "type": "origins:and",
-                                 "conditions": [
-                                    {
-                                       "type": "origins:in_tag",
-                                       "tag": "minecraft:candle_cakes"
-                                    },
-                                    {
-                                       "type": "origins:block_state",
-                                       "property": "lit",
-                                       "value": true
-                                    }
-                                 ]
+                           "conditions": [
+                              {
+                                 "type": "origins:in_tag",
+                                 "tag": "minecraft:candle_cakes"
+                              },
+                              {
+                                 "type": "origins:block_state",
+                                 "property": "lit",
+                                 "value": true
+                              }
+                           ]
                         },
                         "radius": 2,
                         "comparison": ">=",
@@ -47,7 +183,7 @@
                "action": {
                   "type": "origins:change_resource",
                   "resource": "sky:armor_resource",
-                  "change": 15
+                  "change": 40
                }
             },
             {
