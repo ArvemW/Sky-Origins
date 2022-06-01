@@ -15,6 +15,7 @@
 		"sky:child_height",
 		"sky:health",
 		"sky:lightweight",
+		"sky:knockback",
 		"sky:heartbeat",
 		"sky:shield_restrict"
 	],

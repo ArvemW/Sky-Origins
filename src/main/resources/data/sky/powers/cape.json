@@ -1,7 +1,19 @@
-
 {
-    "name": "§nLight Cape",
-    "description": "With the power of your Light, you can glide with a special cape.",
+  "name": "§nLight Cape",
+  "description": "With the power of your Light, you can glide with a special cape.",
+  "type": "origins:multiple",
+  "cape": {
+    "hidden": true,
     "type": "origins:elytra_flight",
     "render_elytra": true
+  },
+  "trail": {
+    "hidden": true,
+    "type": "origins:particle",
+    "particle": "minecraft:firework",
+    "frequency": 1,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
   }
+}

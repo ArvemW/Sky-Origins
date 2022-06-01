@@ -6,12 +6,25 @@
         "type": "origins:resource",
         "name": "light_resource",
         "min": 0,
-        "max": 480,
-        "start_value": 400,
+        "max": 640,
+        "start_value": 640,
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/resource_bar.png",
             "bar_index": 7
+        }
+    },
+    "knockback": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "sky:armor_resource",
+            "comparison": ">",
+            "compare_to": 0
         }
     },
     "damage1": {

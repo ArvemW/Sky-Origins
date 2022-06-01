@@ -1,5 +1,7 @@
 {
     "item.sky.weak_wl": "Weak Winged Light",
+    "item.sky.average_wl": "Average Winged Light",
+    "item.sky.prime_wl": "Prime Winged Light",
     "death.attack.lightout": "%1$s ran out of light",
     "death.attack.lightout.player": "%1$s ran out of light whilst fighting %2$s",
     "subtitles.sky.flap": "Cape Flaps",
