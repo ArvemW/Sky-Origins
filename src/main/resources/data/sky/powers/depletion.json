@@ -1,6 +1,6 @@
 {
     "name": "§0§l§nNot of the darkness",
-    "description": "You lose light when wet in colder biomes.",
+    "description": "You lose light when wet in colder/swampy biomes.",
     "type": "origins:action_over_time",
     "interval": 5,
     "entity_action": {
@@ -18,19 +18,28 @@
                             "inverted": true
                         },
                         {
-                            "type": "origins:biome",
-                            "condition": {
-                                "type": "origins:temperature",
-                                "comparison": "<=",
-                                "compare_to": 0.05
-                            }
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:biome",
+                                    "condition": {
+                                        "type": "origins:temperature",
+                                        "comparison": "<=",
+                                        "compare_to": 0.05
+                                    }
+                                },
+                                {
+                                    "type": "origins:biome",
+                                    "biome": "minecraft:swamp"
+                                }
+                            ]
                         }
                     ]
                 },
                 "action": {
                     "type": "origins:change_resource",
                     "resource": "sky:armor_resource",
-                    "change": -8
+                    "change": -6
                 }
             },
             {
@@ -41,19 +50,28 @@
                             "type": "origins:in_rain"
                         },
                         {
-                            "type": "origins:biome",
-                            "condition": {
-                                "type": "origins:temperature",
-                                "comparison": "<=",
-                                "compare_to": 0.05
-                            }
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:biome",
+                                    "condition": {
+                                        "type": "origins:temperature",
+                                        "comparison": "<=",
+                                        "compare_to": 0.05
+                                    }
+                                },
+                                {
+                                    "type": "origins:biome",
+                                    "biome": "minecraft:swamp"
+                                }
+                            ]
                         }
                     ]
                 },
                 "action": {
                     "type": "origins:change_resource",
                     "resource": "sky:armor_resource",
-                    "change": -4
+                    "change": -3
                 }
             }
         ]
