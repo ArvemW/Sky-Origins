@@ -1,6 +1,7 @@
 
 {
     "name": "§6§nFire Adept",
+    "hidden": true,
     "description": "You are immune to all fire damage, however, lava is still harmful.",
     "type":"origins:modify_damage_taken",
     "modifier":{
