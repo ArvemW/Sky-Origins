@@ -5,12 +5,22 @@
   "cape": {
     "hidden": true,
     "type": "origins:elytra_flight",
-    "render_elytra": true
+    "render_elytra": true,
+    "texture_location": "sky:textures/entity/cape.png"
   },
-  "trail": {
+  "trail_1": {
     "hidden": true,
     "type": "origins:particle",
-    "particle": "minecraft:firework",
+    "particle": "minecraft:end_rod",
+    "frequency": 1,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "trail_2": {
+    "hidden": true,
+    "type": "origins:particle",
+    "particle": "minecraft:end_rod",
     "frequency": 1,
     "condition": {
       "type": "origins:fall_flying"
