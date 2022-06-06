@@ -65,7 +65,7 @@
             }
          ]
       },
-      "interval": 5
+      "interval": 10
    },
    "main_prime": {
       "type": "origins:action_over_time",
@@ -84,7 +84,7 @@
             }
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "main_wl_average": {
       "type": "origins:action_over_time",
@@ -118,7 +118,7 @@
             }
          ]
       },
-      "interval": 5
+      "interval": 10
    },
    "main_average": {
       "type": "origins:action_over_time",
@@ -137,7 +137,7 @@
             }
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "main_wl_weak": {
       "type": "origins:action_over_time",
@@ -171,7 +171,7 @@
             }
          ]
       },
-      "interval": 5
+      "interval": 10
    },
    "main_weak": {
       "type": "origins:action_over_time",
@@ -201,7 +201,7 @@
             ]
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "offhand_prime": {
       "type": "origins:action_over_time",
@@ -220,7 +220,7 @@
             }
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "offhand_average": {
       "type": "origins:action_over_time",
@@ -239,7 +239,7 @@
             }
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "offhand_weak": {
       "type": "origins:action_over_time",
@@ -269,7 +269,7 @@
             ]
          }
       },
-      "interval": 5
+      "interval": 10
    },
    "light_gain": {
       "type": "origins:action_over_time",
