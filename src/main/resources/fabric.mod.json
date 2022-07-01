@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "sky",
-  "version": "0.3.1",
+  "version": "${version}",
 
-  "name": "Sky Origin",
+  "name": "Sky: Origins",
   "description": "This mod adds the opportunity to be a Child of The Light from Sky: COTL with the Origins mod.",
   "authors": [
     "Arvem"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/sky-origins"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/sky-origins",
+    "sources": "https://github.com/ArvemW/Sky-Origins"
   },
 
   "license": "All Rights Reserved",
@@ -26,9 +27,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.14.6",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "~1.19",
     "java": ">=17"
   },
   "suggests": {

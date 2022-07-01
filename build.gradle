@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.11-SNAPSHOT'
+	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -7,10 +7,13 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = "0.3.1"
+version = project.mod_version
 group = project.maven_group
 
 repositories {
+	flatDir{
+		dirs 'libs'
+	}
     maven {
         name = "Ladysnake Libs"
         url = 'https://ladysnake.jfrog.io/artifactory/mods'
@@ -35,11 +38,10 @@ repositories {
     }
     maven {
         url "https://maven.terraformersmc.com/"
-	}
+    }
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -47,8 +49,6 @@ dependencies {
 	modApi("com.github.Virtuoel:Pehkui:${project.pehkui_version}", {
 	exclude group: "net.fabricmc.fabric-api"
 })
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 

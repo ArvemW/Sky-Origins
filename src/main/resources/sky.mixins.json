@@ -6,7 +6,6 @@
   "mixins": [
   ],
   "client": [
-    "SkyMixin"
   ],
   "injectors": {
     "defaultRequire": 1
